@@ -58,7 +58,7 @@
         },
         { q: 'What does DOM stand for?', 
           a: '3. Document Object Model', 
-          choices: [{choice: '1. Do Objectify Mechas'}, {choice: '2. Dementors Own Me' }, {choice: '3. Document Object Model'}, {choice: '4.  DoooOOOOoooMMM'}]
+          choices: [{choice: '1. Do Objectify Mechas'}, {choice: '2. Dementors Own Me' }, {choice: '3. Document Object Model'}, {choice: '4.  DoooOOOO- -oooMMM'}]
         },
         { q: 'What is getItem commonly used for?', 
           a: '1. local storage', 
