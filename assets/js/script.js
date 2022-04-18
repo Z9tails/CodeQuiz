@@ -1,4 +1,5 @@
-     //Var build id/classes element identification
+    
+    //Var build id/classes element identification
      var containerQuestionEl = document.getElementById("question-container");
       var containerStartEl = document.getElementById("starter-container");
       var containerEndEl = document.getElementById("end-container")
@@ -9,10 +10,12 @@
       var listHighScoreEl = document.getElementById("high-score-list")
       var correctEl = document.getElementById("correct")
       var wrongEl = document.getElementById("wrong")
+
       //Buttons
       var btnStartEl = document.querySelector("#start-game");
       var btnGoBackEl = document.querySelector("#go-back")
       var btnClearScoresEl = document.querySelector("#clear-high-scores")
+
       //Questions/Answers Element
       var questionEl = document.getElementById("question")
       var answerbuttonsEl = document.getElementById("answer-buttons")
@@ -32,34 +35,34 @@
     
       
       // The array of questions for our quiz game.
-      var questions = [
-        { q: 'What is Cynophobia?', 
-          a: '4. Fear of Dogs', 
-          choices: [{choice: '1. Fear of Frogs'}, {choice: '2. Fear of greenish-blue colors'}, {choice: '3. Fear of Cyanide'}, {choice: '4. Fear of Dogs'}]
+    var questions = [
+     { q: 'Arrays in Javascript can be used to store __________.', 
+          a: '4. all of the above', 
+          choices: [{choice: '1. booleans'}, {choice: '2. numbers'}, {choice: '3. strings'}, {choice: '4. All of the above'}]
         },
-        { q: 'What is the airspeed of an unladen swallow?', 
-          a: '3. African or European', 
-          choices: [{choice: '1. 50 kmh'}, {choice: '2. 90 mph'}, {choice: '3. African or European'}, {choice: '4. 6 kmh'}]
+        { q: 'Inside which HTML element do we put the javascript?', 
+          a: '4. <script>', 
+          choices: [{choice: '1. <img>'}, {choice: '2. <p>'}, {choice: '3. <header>'}, {choice: '4. <script>'}]
         },
-        { q: 'How much wood could a woodchuck chuck?', 
-          a: '4. 700 pounds', 
-          choices: [{choice: '1. 345 pounds'}, {choice: '2. 90 pounds'}, {choice: '3. Undefined pounds'}, {choice: '4. 700 pounds'}]
+        { q: 'In the code -- setinterval(time(),1000) -- what is time()?', 
+          a: '3. callback function', 
+          choices: [{choice: '1. 10 seconds'}, {choice: '2. undefined'}, {choice: '3. callback function'}, {choice: '4. All of the above'}]
         },
         { q: 'What syntax would call a function?', 
           a: '4. function()', 
           choices: [{choice: '1. var function'}, {choice: '2. function'}, {choice: '3. call function'}, {choice: '4. function()'}]
         },
-        { q: 'What is a Solo Stove?', 
-          a: '3. A smokeless campfire pit', 
-          choices: [{choice: '1. What they used to thaw out Han Solo'}, {choice: '2. What Ben Solo uses for his Sithcakes'}, {choice: '3. A smokeless campfire pit'}, {choice: '4. A one person Ska band'}]
+        { q: 'When did javascript first appear?', 
+          a: '1. 1995', 
+          choices: [{choice: '1. 1995'}, {choice: '2. It is timeless'}, {choice: '3. 2005'}, {choice: '4. 2001'}]
         },
-        { q: 'Who makes the most popular airplane of all time by sales?', 
-          a: '4. Cessna', 
-          choices: [{choice: '1. Boeing'}, {choice: '2. Piper'}, {choice: '3. TBM'}, {choice: '4. Cessna'}]
+        { q: 'What does DOM stand for?', 
+          a: '3. Document Object Model', 
+          choices: [{choice: '1. Do Objectify Mechas'}, {choice: '2. Dementors Own Me' }, {choice: '3. Document Object Model'}, {choice: '4.  DoooOOOOoooMMM'}]
         },
-        { q: 'What is brown and sticky?', 
-          a: '3. A Stick', 
-          choices: [{choice: '1. A Bar of Chocolate'}, {choice: '2. A Brown Trout'}, {choice: '3. A Stick'}, {choice: '4. Tree Sap'}]
+        { q: 'What is getItem commonly used for?', 
+          a: '1. local storage', 
+          choices: [{choice: '1. local storage'}, {choice: '2. bag of holding'}, {choice: '3. online shopping'}, {choice: '4. naming a variable'}]
         },
       ];
       
@@ -107,11 +110,13 @@
     }
 
     var startGame = function() {
+        
         //Add classes to show/hide start and quiz screen
         containerStartEl.classList.add('hide');
         containerStartEl.classList.remove('show');
         containerQuestionEl.classList.remove('hide');
         containerQuestionEl.classList.add('show');
+       
         //Shuffle the questions so they show in random order
         arrayShuffledQuestions = questions.sort(() => Math.random() - 0.5)
         setTime()
@@ -143,7 +148,8 @@
             answerbuttonsEl.appendChild(answerbutton)
             }
         };
-    //Display Correct! gif on screen
+   
+        //Display Correct! gif on screen
     var answerCorrect = function() {
         if (correctEl.className = "hide") {
             correctEl.classList.remove("hide")
@@ -152,7 +158,8 @@
             wrongEl.classList.add("hide")
             }
         }  
-    //Display Wrong! gif on screen
+    
+        //Display Wrong! gif on screen
     var answerWrong = function() {
         if (wrongEl.className = "hide") {
             wrongEl.classList.remove("hide")
@@ -310,11 +317,15 @@
         
       //On >Start< click, start game
       btnStartEl.addEventListener("click", startGame)
+     
       //On >Submit< button -- enter or click
       formInitials.addEventListener("submit", createHighScore)
+      
       //When >view high-scores< is clicked
       ViewHighScoreEl.addEventListener("click", displayHighScores)
+      
       //Go back button
       btnGoBackEl.addEventListener("click", renderStartPage)
+     
       //Clear scores button
       btnClearScoresEl.addEventListener("click", clearScores)
